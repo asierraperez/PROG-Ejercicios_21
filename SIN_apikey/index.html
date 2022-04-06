@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body style="display: flex; padding: 10px;">
+    <div style="margin-right: 20px; border-right: 1px solid black;padding-right: 20px;">
+        <a>Selecciona una temporada</a>
+        <select id="temporada"></select>
+        <br>
+        <br>
+        <a>Selecciona un país</a>
+        <select id="pais">
+            <option value="esp.1">España</option>
+            <option value="ger.1">Alemania</option>
+            <option value="eng.1">Inglaterra</option>
+            <option value="ita.1">Italia</option>
+        </select>
+        <br>
+        <br>
+        <button id="buscar">Buscar</button>
+    </div>
+    <div>
+        <div style="font-weight: bolder;" id="nombre_liga"></div>
+        <br>
+        <div id="clasificacion" style="display: grid;grid-template-columns: 100px 150px 100px;"></div>
+
+
+
+    </div>
+
+</body>
+<footer>
+    <script src="main.js"></script>
+</footer>
+
+</html>
