@@ -13,11 +13,16 @@ function borraContenidoHTML(e_content) {
 
 function fechaAleatoria() {
     var hoy = new Date()
-    var max_year = hoy.getFullYear() + 1
-    var year = Math.floor(Math.random() * (max_year - 2000) + 2000)
+    var max_year = hoy.getFullYear()
+    var year = Math.floor(Math.random() * ((max_year + 1) - 2000) + 2000)
     var month = Math.floor(Math.random() * (13 - 1) + 1)
     if (month == 2) {
-        var day = Math.floor(Math.random() * (30 - 1) + 1)
+        if (year % 4 == 0) {
+            var day = Math.floor(Math.random() * (30 - 1) + 1)
+        } else {
+            var day = Math.floor(Math.random() * (29 - 1) + 1)
+        }
+
     } else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
         var day = Math.floor(Math.random() * (32 - 1) + 1)
     } else {
@@ -44,7 +49,6 @@ function __main__() {
         var settings = {
             "async": true,
             "type": "GET",
-            "date": date,
             "url": "https://api.nasa.gov/planetary/apod?api_key=" + api_key + "&date=" + date,
         }
 
